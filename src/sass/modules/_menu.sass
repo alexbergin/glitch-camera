@@ -1,0 +1,102 @@
+menu
+	@include element-reset
+	border-color: transparent
+	background-color: $primary-color
+	position: relative
+	overflow: hidden
+	width: 100%
+	display: inline-block
+	max-height: 100vh
+	max-width: 100vw
+	height: 512px
+	top: 0
+
+	button
+		@include element-reset
+		cursor: pointer
+
+	.progress
+		@include default-transition
+		position: absolute
+		background-color: tint( $primary-color , 30% )
+		z-index: 1
+		width: 12px
+		bottom: 0
+		left: 0
+		top: 0
+
+		div
+			background-color: shade( $primary-color , 30% )
+			position: absolute
+			height: 100%
+			width: 100%
+			left: 0
+			top: 0
+
+		@media screen and ( orientation: portrait )
+			bottom: auto
+			width: auto
+			height: 12px
+			right: 0
+			left: 0
+			top: 0
+
+	.glitch
+		@include default-transition
+		cursor: -webkit-grab
+		cursor: grab
+		position: absolute
+		background-color: shade( $primary-color , 10% )
+		z-index: 1
+		width: 30px
+		bottom: 0
+		left: 0
+		top: 0
+
+		&:active
+			cursor: -webkit-grabbing
+			cursor: grabbing
+
+		&:before
+			content: ""
+			background-color: shade( $primary-color , 30% )
+			position: absolute
+			border-radius: 30px
+			bottom: 13px
+			right: 13px
+			left: 13px
+			top: 13px
+
+		div
+			position: absolute
+			bottom: 15px
+			right: 15px
+			left: 15px
+			top: 15px
+
+		i
+			background-color: $secondary-color
+			position: absolute
+			margin: 0 0 -7px -7px
+			border-radius: 50%
+			height: 14px
+			width: 14px
+			bottom: 50%
+			left: 50%
+
+	@media screen and ( orientation: portrait )
+		display: block
+		max-width: 512px
+		width: 100vw
+		max-height: 100vh
+		height: 128px
+		top: auto
+
+		.glitch
+			height: 30px
+			bottom: auto
+			width: 100%
+			right: 0
+			left: 0
+			top: 0
+

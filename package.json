@@ -1,0 +1,29 @@
+{
+  "name": "glitchpic",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-autoprefixer": "~2.0.0",
+    "grunt-browser-sync": "~1.5.3",
+    "grunt-coffeelint": "~0.0.13",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-contrib-coffee": "~0.12.0",
+    "grunt-contrib-compass": "~1.0.1",
+    "grunt-contrib-concat": "~0.5.0",
+    "grunt-contrib-copy": "~0.7.0",
+    "grunt-contrib-cssmin": "~0.10.0",
+    "grunt-contrib-htmlmin": "~0.3.0",
+    "grunt-contrib-imagemin": "~0.9.2",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-requirejs": "~0.4.4",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-html-prettyprinter": "~1.5.0",
+    "grunt-mustache-render": "~1.7.0",
+    "grunt-targethtml": "~0.2.6",
+    "load-grunt-tasks": "~1.0.0",
+    "time-grunt": "~1.0.0"
+  },
+  "engines": {
+    "node": ">=0.10.33"
+  }
+}

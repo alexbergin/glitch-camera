@@ -1,0 +1,53 @@
+html , body
+	@include no-select
+	font-size: 0
+	background-color: $black
+	position: absolute
+	overflow: hidden
+	height: 100%
+	width: 100%
+	left: 0
+	top: 0
+
+	font-family: "Inconsolata" , monospace
+	font-weight: 100
+	letter-spacing: 0.1em
+
+	@media screen and ( max-width: 512px )
+		background-color: $primary-color
+
+	@media screen and ( max-height: 512px )
+		background-color: $primary-color
+
+img
+	@include yes-select
+
+main
+	@include translate( -50% , -50% )
+	max-width: 640px
+	max-height: 512px
+	overflow: hidden
+	white-space: nowrap
+	position: relative
+	font-size: 0
+	left: 50%
+	top: 50%
+
+	@media screen and ( max-width: 512px )
+		@include translate( -50% , 0 )
+		top: 0
+
+		@media screen and ( max-height: 512px )
+			@include translate( 0 , 0 )
+
+	@media screen and ( max-height: 512px )
+		@include translate( 0 , -50% )
+		left: 0
+
+		@media screen and ( max-width: 512px )
+			@include translate( 0 , 0 )
+
+	@media screen and ( orientation: portrait )
+		max-width: 512px
+		max-height: 640px
+		white-space: normal

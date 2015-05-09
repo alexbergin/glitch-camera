@@ -1,0 +1,87 @@
+@include keyframes( spinload )
+	0%
+		@include rotate( 0deg )
+
+	100%
+		@include rotate( -360deg )
+
+.stage
+	background-color: $white
+	background-size: cover
+	position: relative
+	display: inline-block
+	height: 100vh
+	width: 100vh
+
+	@media screen and ( orientation: portrait )
+		height: 100vw
+		width: 100vw
+
+	max-width: 512px
+	max-height: 512px
+
+	canvas , img
+		@include default-transition
+		position: absolute
+		height: 100%
+		width: 100%
+		left: 0
+		top: 0
+
+	img
+		opacity: 0
+
+	.error
+		display: none
+		background-color: shade( $primary-color , 10% )
+		position: absolute
+		height: 100%
+		width: 100%
+		left: 0
+		top: 0
+
+		&.visible
+			display: block
+
+		p
+			@include translate( -50% , -50% )
+			color: $white
+			text-align: center
+			font-size: 14px
+			font-family: "Inconsolata" , monospace
+			position: absolute
+			padding: 30px
+			box-sizing: border-box
+			max-height: 100%
+			max-width: 100%
+			display: inline-block
+			left: 50%
+			top: 50%
+
+	.loading
+		@include animation( spinload 0.35s linear infinite both )
+		opacity: 0
+		border-radius: 50%
+		border: 3px solid $secondary-color
+		border-bottom: 3px solid transparent
+		box-sizing: border-box
+		position: absolute
+		margin: -18px 0 0 -18px
+		height: 36px
+		width: 36px
+		left: 50%
+		top: 50%
+
+	&.rendered img
+		opacity: 1
+
+	&.processing
+		background-color: shade( $primary-color , 10% )
+
+		canvas
+			opacity: 0
+
+		.loading
+			opacity: 1
+
+

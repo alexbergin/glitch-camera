@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	{{> modules/head }}
+	<body>
+		<main>
+			<section class="stage">
+				<div class="loading"></div>
+				<canvas></canvas>
+				<img />
+				<div class="error not-supported">
+					<p>{{error.notSupported}}</p>
+				</div>
+				<div class="error not-allowed">
+					<p>{{error.notAllowed}}</p>
+				</div>
+			</section>
+			<div class="console"></div>
+			<menu>
+				<div class="buttons record">
+					<a class="save" download="a-glitched.gif" target="_blank"><i></i></a>
+					<button class="discard"><i></i></button>
+					<button class="capture"><i></i></button>
+				</div>
+				<button class="glitch">
+					<div><i></i></div>
+				</button>
+				<div class="progress">
+					<div></div>
+				</div>
+			</menu>
+		</main>
+		<div class="worker">
+			<video autoplay></video>
+			<canvas></canvas>
+			<img />
+		</div>
+	</body>
+	{{> modules/scripts }}
+</html>

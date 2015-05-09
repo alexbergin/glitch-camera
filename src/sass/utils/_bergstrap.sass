@@ -1,0 +1,170 @@
+///////////////////////////////////////////////
+//                                           //
+// bergstrap v0.1.0                          //
+// a bunch of mixins i usually use           //
+//                                           //
+///////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////
+// resets                                    //
+///////////////////////////////////////////////
+
+// disable highlighting and android highlighting on buttons
+=no-select
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+
+// just incase you need to re-enable selecting
+=yes-select
+	-webkit-tap-highlight-color: auto
+	-webkit-touch-callout: auto
+	-webkit-user-select: auto
+	-khtml-user-select: auto
+	-moz-user-select: auto
+	-ms-user-select: auto
+	user-select: auto
+
+// revert to a more consistant default state
+// make sure you specify a :focus/:active state to replace outline: none
+// if it's an interactive element or i'll find you
+=element-reset
+	-webkit-appearance: none
+	-moz-appearance: none
+	-ms-appearance: none
+	outline: none
+	border: none
+	appearance: none
+	background: none
+	box-shadow: none
+	border-radius: 0
+	padding: 0
+	margin: 0
+
+
+
+///////////////////////////////////////////////
+// media queries                             //
+///////////////////////////////////////////////
+
+// your default style = maximum size
+// smaller media queries will overwrite the larger ones
+
+// i like to use this to declare which properties will change
+// when things get crazy, but feel free to not use it
+=full-scale
+	@content
+
+// scales for width
+// you can declare these before including this file to overwrite them
+$large-scale-breakpoint: 1400px !default
+$medium-scale-breakpoint: 1000px !default
+$small-scale-breakpoint: 700px !default
+$tiny-scale-breakpoint: 450px !default
+
+// just incase you need a custom width media query
+=custom-scale( $scale )
+	@media screen and ( max-width: $scale )
+		@content
+
+=large-scale
+	@media screen and ( max-width: $large-scale-breakpoint )
+		@content
+
+=medium-scale
+	@media screen and ( max-width: $medium-scale-breakpoint )
+		@content
+
+=small-scale
+	@media screen and ( max-width: $small-scale-breakpoint )
+		@content
+
+=tiny-scale
+	@media screen and ( max-width: $tiny-scale-breakpoint )
+		@content
+
+// scales for height
+// you can declare these before including this file to overwrite them
+$really-tall-breakpoint: 1200px !default
+$tall-breakpoint: 900px !default
+$short-breakpoint: 600px !default
+$really-short-breakpoint: 300px !default
+
+// just incase you need a custom height media query
+=custom-height( $height )
+	@media screen and ( max-height: $height )
+		@content
+
+=really-tall
+	@media screen and ( max-height: $really-tall-breakpoint )
+		@content
+
+=tall
+	@media screen and ( max-height: $tall-breakpoint )
+		@content
+
+=short
+	@media screen and ( max-height: $short-breakpoint )
+		@content
+
+=really-short
+	@media screen and ( max-height: $really-short-breakpoint )
+		@content
+
+// do when portrait
+=portrait
+	@media screen and ( orientation: portrait )
+		@content
+   
+// do when landscape
+=landscape
+	@media screen and ( orientation: landscape )
+		@content
+
+// do at the specified ratio
+=window-ratio( $ratio )
+	@media screen and ( max-aspect-ratio: $ratio )
+		@content
+
+
+
+///////////////////////////////////////////////
+// transitions                               //
+///////////////////////////////////////////////
+
+=default-transition( $duration: 0.35s )
+	@include transition( all $duration cubic-bezier(.36,0,.29,1) , z-index 0s linear )
+
+
+
+///////////////////////////////////////////////
+// positioning                               //
+///////////////////////////////////////////////
+
+=center-center
+	@include translate( -50% , -50% )
+	position: absolute
+	text-align: center
+	left: 50%
+	top: 50%
+
+
+
+///////////////////////////////////////////////
+// background images                         //
+///////////////////////////////////////////////
+
+=background-cover( $x-axis: 50% , $y-axis: 50% )
+	background-position: $x-axis $y-axis
+	background-size: cover
+
+=background-contain( $x-axis: 50% , $y-axis: 50% )
+	background-position: $x-axis $y-axis
+	background-repeat: no-repeat
+	background-size: contain

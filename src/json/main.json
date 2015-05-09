@@ -1,0 +1,14 @@
+{
+	"head": {
+		"title": "glitch.camera",
+		"description": "Glitch a gif from your webcam in your browser",
+		"image": "images/ogimage.gif",
+		"url": "http://alexberg.in/glitchcamera/",
+		"handle": "@_alexbergin"
+	},
+
+	"error": {
+		"notAllowed": "Please allow access to your camera.",
+		"notSupported": "Sorry, it looks like your browser or device can't run this site."
+	}
+}

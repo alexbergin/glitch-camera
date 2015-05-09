@@ -1,0 +1,12 @@
+{
+  "name": "glitchpic",
+  "version": "0.1.0",
+  "dependencies": {
+    "classlist": "~2013.5.14",
+    "gifshot": "0.1.0",
+    "requestAnimationFrame": "0.0.22",
+    "requirejs": "~2.1.15",
+    "requirejs-plugins": "~1.0.2",
+    "requirejs-text": "~2.0.12"
+  }
+}
