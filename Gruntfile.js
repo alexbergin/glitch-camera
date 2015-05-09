@@ -219,7 +219,6 @@ module.exports = function( grunt ) {
 		"compass",
 		"autoprefixer:dist",
 		"coffee:dev",
-		"copy:app",
 		"imagemin",
 		"copy:dist",
 		"cssmin",
@@ -234,7 +233,6 @@ module.exports = function( grunt ) {
 	// Prep the dev environment for watching, or run this directly to
 	// update it a single time
 	grunt.registerTask( "devupdate", [
-		"copy:app",
 		"imagemin",
 		"compass",
 		"coffee:dev",
